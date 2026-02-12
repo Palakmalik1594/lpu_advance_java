@@ -7,8 +7,8 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.product.Person;
-import com.product.PersonDoa;
+import com.person.Person;
+import com.person.PersonDoa;
 
 public class PersonDoaTest {
 
@@ -27,8 +27,8 @@ public class PersonDoaTest {
     @Test
     public void testInsertPerson() {
         Person p = new Person();
-        p.setId(1);
-        p.setName("Yash");
+        p.setId(2);
+        p.setName("Palak");
         p.setDob("01/07/2004");
         p.setAddress("Rohtak");
         p.setPincode(124001);
@@ -46,14 +46,14 @@ public class PersonDoaTest {
     @Test
     public void testFindPerson() {
         Person p = new Person();
-        p.setId(2);
-        p.setName("Krish");
+        p.setId(3);
+        p.setName("Priya");
         p.setDob("10/10/2004");
         p.setAddress("Delhi");
         p.setPincode(110001);
         dao.insertPerson(p);
 
-        Person found = dao.findPerson(2);
+        Person found = dao.findPerson(3);
         assertNotNull(found);
     }
 
@@ -66,11 +66,11 @@ public class PersonDoaTest {
     @Test
     public void testDeletePerson() {
         Person p = new Person();
-        p.setId(3);
+        p.setId(4);
         p.setName("Test");
         dao.insertPerson(p);
 
-        String res = dao.deletePerson(3);
+        String res = dao.deletePerson(4);
         assertEquals("Data deleted", res);
     }
 

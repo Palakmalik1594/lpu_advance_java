@@ -1,4 +1,4 @@
-package com.product;
+package com.person;
 
 import java.util.List;
 

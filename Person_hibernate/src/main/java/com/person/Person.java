@@ -1,4 +1,4 @@
-package com.product;
+package com.person;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
