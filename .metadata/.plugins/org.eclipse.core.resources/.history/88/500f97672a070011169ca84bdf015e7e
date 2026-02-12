@@ -1,0 +1,29 @@
+package com.product_hibernate;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import org.jboss.jandex.Main;
+import org.junit.jupiter.api.Test;
+
+import com.practice.Product;
+import com.practice.ProductDao;
+
+public class ProductDaoTest {
+	@Test
+	public void insertProductTest() {
+		ProductDao dao=new ProductDao();
+		Product product=new Product();
+		product.setId(2);
+		product.setName("Pencil");
+		product.setPrice(5);
+		dao.insertProduct(product);
+	}
+	
+	@Test
+	public void findById() {
+		ProductDao dao=new ProductDao();
+		Product p=dao.findById(100);
+		assertNotNull(p);
+	}
+
+}

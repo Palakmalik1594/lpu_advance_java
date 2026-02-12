@@ -1,0 +1,32 @@
+package com.learnjdbc;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
+import com.connectdatabase.Program;
+
+public class ProgramTest {
+	
+//	@ParameterizedTest
+//	@ValueSource(strings= {"tenet","radar","aba","abcd"})
+public void isPalindromeTest(String str) {
+	Program p=new Program();
+	assertTrue(p.ispalindrome(str));
+	
+}
+	@ParameterizedTest
+	@CsvSource({
+		"1,2,3",
+		"5,5,10",//1 a lega,2 b lega aur 3 expected hoga
+		"5,3,8"
+	})
+public void addTest(int a,int b,int expectedresult) {
+		Program p=new Program();
+		int actual=p.add(a, b);
+		assertEquals(expectedresult,actual);
+	
+}
+}

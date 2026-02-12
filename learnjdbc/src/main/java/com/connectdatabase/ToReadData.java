@@ -1,0 +1,40 @@
+package com.connectdatabase;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.*;
+
+public class ToReadData {
+	public static void main(String[] args) {
+		Scanner scan=new Scanner(System.in);
+		try {
+			//after jdbc4,we can ignore this step
+			Class.forName("org.postgresql.Driver");
+			Connection connect=DriverManager.getConnection("jdbc:postgresql://localhost:5432/college","postgres","root");
+			String sql="insert into student values(?,?,?)";
+			PreparedStatement pstm=connect.prepareStatement(sql);
+			System.out.println("Enter id: ");
+			int id=scan.nextInt();
+//			pstm.setInt(1, 15);
+//			pstm.setString(2, "King");
+//			pstm.setString(3, "DS");
+			pstm.setInt(1, id);
+			System.out.println("ENter name: ");
+			String name=scan.next();
+			pstm.setString(2, name);
+			System.out.println("Enter branch: ");
+			String branch=scan.next();
+			pstm.setString(3, branch);
+			pstm.execute();
+			connect.close();
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			
+			e.printStackTrace();
+		}
+		
+	}
+
+}
