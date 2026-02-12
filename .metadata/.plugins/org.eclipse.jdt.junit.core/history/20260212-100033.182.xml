@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="ProgramTest" project="junit_testing" tests="3" started="3" failures="0" errors="0" ignored="0">
-  <testsuite name="com.learnjdbc.ProgramTest" time="0.0" displayname="ProgramTest" uniqueid="[engine:junit-jupiter]/[class:com.learnjdbc.ProgramTest]">
-    <testsuite name="addTest(com.learnjdbc.ProgramTest)" time="0.0" displayname="addTest(int, int, int)" parameters="int,int,int" uniqueid="[engine:junit-jupiter]/[class:com.learnjdbc.ProgramTest]/[test-template:addTest(int, int, int)]">
-      <testcase name="addTest" classname="com.learnjdbc.ProgramTest" time="0.0" dynamicTest="true" displayname="[1] 1, 2, 3" parameters="int,int,int" uniqueid="[engine:junit-jupiter]/[class:com.learnjdbc.ProgramTest]/[test-template:addTest(int, int, int)]/[test-template-invocation:#1]"/>
-      <testcase name="addTest" classname="com.learnjdbc.ProgramTest" time="0.0" dynamicTest="true" displayname="[2] 5, 5, 10" parameters="int,int,int" uniqueid="[engine:junit-jupiter]/[class:com.learnjdbc.ProgramTest]/[test-template:addTest(int, int, int)]/[test-template-invocation:#2]"/>
-      <testcase name="addTest" classname="com.learnjdbc.ProgramTest" time="0.0" dynamicTest="true" displayname="[3] 5, 3, 8" parameters="int,int,int" uniqueid="[engine:junit-jupiter]/[class:com.learnjdbc.ProgramTest]/[test-template:addTest(int, int, int)]/[test-template-invocation:#3]"/>
-    </testsuite>
-  </testsuite>
-</testrun>
