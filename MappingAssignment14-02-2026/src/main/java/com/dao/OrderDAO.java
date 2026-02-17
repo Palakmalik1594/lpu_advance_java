@@ -1,7 +1,6 @@
 package com.dao;
 
 import java.util.List;
-
 import javax.persistence.*;
 
 import com.mapping.PurchaseOrder;
@@ -12,15 +11,24 @@ public class OrderDAO {
     private EntityManagerFactory emf =
             Persistence.createEntityManagerFactory("postgres");
 
+
     public void saveOrder(PurchaseOrder o) {
 
         EntityManager em = emf.createEntityManager();
         EntityTransaction et = em.getTransaction();
 
         et.begin();
-        em.persist(o);
-        et.commit();
 
+        // Check if order already exists
+        PurchaseOrder existing = em.find(PurchaseOrder.class, o.getId());
+
+        if (existing == null) {
+            em.persist(o);     // NEW order
+        } else {
+            em.merge(o);       // UPDATE order
+        }
+
+        et.commit();
         em.close();
     }
 
@@ -37,7 +45,12 @@ public class OrderDAO {
         EntityManager em = emf.createEntityManager();
 
         User u = em.find(User.class, userId);
-        List<PurchaseOrder> orders = u.getList();
+
+        List<PurchaseOrder> orders = null;
+
+        if (u != null) {
+            orders = u.getList();
+        }
 
         em.close();
         return orders;

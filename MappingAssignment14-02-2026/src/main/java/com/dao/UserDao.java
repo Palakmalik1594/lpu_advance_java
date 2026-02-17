@@ -15,6 +15,7 @@ public class UserDao {
         EntityTransaction et = em.getTransaction();
 
         et.begin();
+        em.persist(u.getProfile());
         em.persist(u);
         et.commit();
 

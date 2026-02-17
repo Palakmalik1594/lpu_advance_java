@@ -12,7 +12,7 @@ public class Main {
 		EntityTransaction et=em.getTransaction();
 		 // creating department
 		Department d=new Department();
-		d.setId(4);
+		//d.setId(4);
 		d.setName("palak");
 		d.setManagername("prisha");
 		d.setCount_emp(5);
@@ -20,13 +20,13 @@ public class Main {
 		
 		//create employee
 		Employee e1=new Employee();
-		e1.setId(103);
+		//e1.setId(103);
 		e1.setName("supriya");
 		e1.setSalary(26000);
 		e1.setDesignation("iosdeveloper");
 		e1.setDepartment(d);
 		Employee e2 = new Employee();
-		e2.setId(104);
+		//e2.setId(104);
 		e2.setName("Amisha");
 		e2.setSalary(30000);
 		e2.setDesignation("Tester");

@@ -1,12 +1,17 @@
 package com.manytoone;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
 public class Employee {
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)  //it assigns an id for entity,if id deleted then new id will be assigned to it
+	//identity starts creating id from 1
+	//in identity we cannot initialize the range but in sequence we can initialize
 private int id;
 private String name;
 private int salary;
