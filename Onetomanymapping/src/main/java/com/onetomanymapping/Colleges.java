@@ -3,6 +3,7 @@ package com.onetomanymapping;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -13,7 +14,7 @@ public class Colleges {
 	private String name;
 	private String location;
 	private String pincode;
-	@OneToMany
+	@OneToMany(fetch=FetchType.EAGER)
 	private List<Students>student;
 	
 	public List<Students> getS() {
@@ -22,6 +23,7 @@ public class Colleges {
 	public void setS(List<Students> student) {
 		this.student = student;
 	}
+	//one to many and many to many are lazy
 	public int getId() {
 		return id;
 	}

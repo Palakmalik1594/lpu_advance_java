@@ -1,6 +1,7 @@
 package com.manytoone;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,7 +17,7 @@ private int id;
 private String name;
 private int salary;
 private String designation;
-@ManyToOne
+@ManyToOne(fetch=FetchType.LAZY)
 private Department department;
 
 

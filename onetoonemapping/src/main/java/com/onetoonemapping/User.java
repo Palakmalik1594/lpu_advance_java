@@ -9,7 +9,7 @@ import javax.persistence.Persistence;
 public class User {
 	public static void main(String[] args) {
 	 FindCarById();
-	 deleteByEngineId();
+//	 deleteByEngineId();
 	 
 	}
 	public static void deleteByEngineId() {
@@ -38,9 +38,11 @@ public class User {
 		EntityTransaction et=em.getTransaction();
 		Car c=em.find(Car.class,1);
 		
-		System.out.println(c.getEngine().getCc());
-		
 		System.out.println(c);
+		
+		System.out.println(c.getEngine()+" "+c.getModel());
+		
+		
 		
 	}
 		public static void insertCarandEngine() {
