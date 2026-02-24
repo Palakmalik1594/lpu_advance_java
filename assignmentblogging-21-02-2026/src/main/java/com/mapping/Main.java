@@ -17,8 +17,8 @@ public class Main{
         Post p1 = new Post();
         p1.setTitle("yes right");
         p1.setContent("good work done right");
-        p1.setCreatedAt("12-08-2024");
-        p1.setUpdatedAt("21-04-2025");
+        p1.setCreatedAt("12-07-2025");
+        p1.setUpdatedAt("20-05-2026");
         p1.setAuthor(u1);
 
         Comment c1 = new Comment();

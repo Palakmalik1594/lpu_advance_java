@@ -1,29 +1,40 @@
 package com.assignment;
 
+import javax.persistence.*;
+
+@Entity
 public class SupportTicket {
-private Long ticketId;
-private String issue;
-private String status;
-public Long getTicketId() {
-	return ticketId;
-}
-@Override
-public String toString() {
-	return "SupportTicket [ticketId=" + ticketId + ", issue=" + issue + ", status=" + status + "]";
-}
-public void setTicketId(Long ticketId) {
-	this.ticketId = ticketId;
-}
-public String getIssue() {
-	return issue;
-}
-public void setIssue(String issue) {
-	this.issue = issue;
-}
-public String getStatus() {
-	return status;
-}
-public void setStatus(String status) {
-	this.status = status;
-}
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String issueDescription;
+
+    @ManyToOne
+    private Order order;
+
+    public Long getId() {
+        return id;
+    }
+    
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getIssueDescription() {
+        return issueDescription;
+    }
+    
+    public void setIssueDescription(String issueDescription) {
+        this.issueDescription = issueDescription;
+    }
+
+    public Order getOrder() {
+        return order;
+    }
+    
+    public void setOrder(Order order) {
+        this.order = order;
+    }
 }

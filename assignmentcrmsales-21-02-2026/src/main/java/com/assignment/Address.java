@@ -1,42 +1,56 @@
 package com.assignment;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Address {
-	@Id
-	private Long addressId;
-	private String city;
-	private String state;
-	private String pincode;
-	@Override
-	public String toString() {
-		return "Address [addressId=" + addressId + ", city=" + city + ", state=" + state + ", pincode=" + pincode + "]";
-	}
-	public Long getAddressId() {
-		return addressId;
-	}
-	public void setAddressId(Long addressId) {
-		this.addressId = addressId;
-	}
-	public String getCity() {
-		return city;
-	}
-	public void setCity(String city) {
-		this.city = city;
-	}
-	public String getState() {
-		return state;
-	}
-	public void setState(String state) {
-		this.state = state;
-	}
-	public String getPincode() {
-		return pincode;
-	}
-	public void setPincode(String pincode) {
-		this.pincode = pincode;
-	}
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String street;
+    private String city;
+    private String state;
+    private String zipCode;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+    
+    public void setStreet(String street) {
+        this.street = street;
+    }
+    
+    public String getCity() {
+        return city;
+    }
+    
+    public void setCity(String city) {
+        this.city = city;
+    }
+    
+    public String getState() {
+        return state;
+    }
+    
+    public void setState(String state) {
+        this.state = state;
+    }
+    
+    public String getZipCode() {
+        return zipCode;
+    }
+    
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
 }
